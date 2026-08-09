@@ -1,0 +1,325 @@
+[gd_scene format=3 uid="uid://dh3l2h4wq2la2"]
+
+[ext_resource type="Texture2D" uid="uid://fhwjx17vt1cg" path="res://yellow.jpg" id="1_enoba"]
+[ext_resource type="Script" uid="uid://c0ag7ucn0307d" path="res://Scenes/minigame_1.gd" id="1_o6yob"]
+[ext_resource type="PackedScene" uid="uid://bekj7t73pxhok" path="res://Scenes/player.tscn" id="2_11mgy"]
+[ext_resource type="Texture2D" uid="uid://bqv425r8rvoam" path="res://heart.png" id="3_f6tb2"]
+[ext_resource type="Script" uid="uid://ct8ghwrc4jmld" path="res://heart.gd" id="4_5txvl"]
+[ext_resource type="PackedScene" uid="uid://1wolvkfw8cro" path="res://Scenes/themedtimer_screen.tscn" id="6_0uv5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csdjn"]
+size = Vector2(0.0066058356, 11.495762)
+
+[sub_resource type="Animation" id="Animation_o6yob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart/Heart:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(582, 296)]
+}
+
+[sub_resource type="Animation" id="Animation_5txvl"]
+resource_name = "floating"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart/Heart:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(582, 296), Vector2(582, 293.99997)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0uv5o"]
+_data = {
+&"RESET": SubResource("Animation_o6yob"),
+&"floating": SubResource("Animation_5txvl")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7hxut"]
+radius = 24.0
+
+[node name="minigame_1" type="Node2D" unique_id=529582273]
+script = ExtResource("1_o6yob")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1936782918]
+repeat_size = Vector2(1150, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="ScrollingBackground" type="TextureRect" parent="Parallax2D" unique_id=246537906]
+offset_right = 1152.0
+offset_bottom = 800.0
+texture = ExtResource("1_enoba")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=913200897]
+position = Vector2(-493, 610)
+scale = Vector2(62.63916, 2.0795393)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=767885749]
+position = Vector2(20.00027, 19.95633)
+scale = Vector2(6055.335, 3.3882835)
+shape = SubResource("RectangleShape2D_csdjn")
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1132187102]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1796848517]
+position = Vector2(-2, 482)
+scale = Vector2(7.9621263, 0.8218339)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1645452712]
+position = Vector2(20.00027, 19.95633)
+scale = Vector2(6055.335, 3.3882835)
+shape = SubResource("RectangleShape2D_csdjn")
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=771561829]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1951680773]
+position = Vector2(332.00003, 344)
+scale = Vector2(7.9621263, 0.8043481)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1402886315]
+position = Vector2(20.00027, 19.95633)
+scale = Vector2(6055.335, 3.3882835)
+shape = SubResource("RectangleShape2D_csdjn")
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=134414707]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=1825667406]
+position = Vector2(3.000061, 220)
+scale = Vector2(7.9621263, 0.8043481)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=1872213581]
+position = Vector2(20.00027, 19.95633)
+scale = Vector2(6055.335, 3.3882835)
+shape = SubResource("RectangleShape2D_csdjn")
+
+[node name="ColorRect" type="ColorRect" parent="Platform4" unique_id=872535677]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform5" type="StaticBody2D" parent="." unique_id=18233382]
+position = Vector2(656, 277.00003)
+scale = Vector2(3.7373247, 0.8043481)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=1480136855]
+position = Vector2(20.00027, 19.95633)
+scale = Vector2(6055.335, 3.3882835)
+shape = SubResource("RectangleShape2D_csdjn")
+
+[node name="ColorRect" type="ColorRect" parent="Platform5" unique_id=1084632429]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform6" type="StaticBody2D" parent="." unique_id=313462158]
+position = Vector2(843.00006, 220)
+scale = Vector2(3.7373247, 0.8043481)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform6" unique_id=1709578661]
+position = Vector2(20.00027, 19.95633)
+scale = Vector2(6055.335, 3.3882835)
+shape = SubResource("RectangleShape2D_csdjn")
+
+[node name="ColorRect" type="ColorRect" parent="Platform6" unique_id=1646641379]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform7" type="StaticBody2D" parent="." unique_id=1175753411]
+position = Vector2(1011, 157)
+scale = Vector2(3.7373247, 0.8043481)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform7" unique_id=1302651093]
+position = Vector2(20.00027, 19.95633)
+scale = Vector2(6055.335, 3.3882835)
+shape = SubResource("RectangleShape2D_csdjn")
+
+[node name="ColorRect" type="ColorRect" parent="Platform7" unique_id=702307811]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform8" type="StaticBody2D" parent="." unique_id=132554720]
+position = Vector2(-284, -383.0001)
+scale = Vector2(0.72299814, 26.4397)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform8" unique_id=1042541267]
+position = Vector2(20.00027, 19.95633)
+scale = Vector2(6055.335, 3.3882835)
+shape = SubResource("RectangleShape2D_csdjn")
+
+[node name="ColorRect" type="ColorRect" parent="Platform8" unique_id=631870484]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform9" type="StaticBody2D" parent="." unique_id=1309439326]
+position = Vector2(1363.9999, -383)
+scale = Vector2(0.72299814, 26.4397)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform9" unique_id=1938120385]
+position = Vector2(20.00027, 19.95633)
+scale = Vector2(6055.335, 3.3882835)
+shape = SubResource("RectangleShape2D_csdjn")
+
+[node name="ColorRect" type="ColorRect" parent="Platform9" unique_id=770217291]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." unique_id=678955655 instance=ExtResource("2_11mgy")]
+position = Vector2(516, 321)
+
+[node name="Heart" type="Node2D" parent="." unique_id=1154165480]
+position = Vector2(-565, -128)
+script = ExtResource("4_5txvl")
+
+[node name="Heart" type="TextureRect" parent="Heart" unique_id=1850803978]
+offset_left = 582.0
+offset_top = 296.0
+offset_right = 1862.0
+offset_bottom = 1576.0
+scale = Vector2(0.040001985, 0.04000107)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Heart" unique_id=1827755618]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart" unique_id=1632637045]
+position = Vector2(606, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart/Area2D" unique_id=1867338325]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_7hxut")
+
+[node name="Heart2" type="Node2D" parent="." unique_id=2126203761]
+position = Vector2(508, -192)
+script = ExtResource("4_5txvl")
+
+[node name="Heart" type="TextureRect" parent="Heart2" unique_id=626506613]
+offset_left = 582.0
+offset_top = 296.0
+offset_right = 1862.0
+offset_bottom = 1576.0
+scale = Vector2(0.040001985, 0.04000107)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Heart2" unique_id=1828008065]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart2" unique_id=2030083024]
+position = Vector2(606, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart2/Area2D" unique_id=153499651]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_7hxut")
+
+[node name="Heart3" type="Node2D" parent="." unique_id=1209981275]
+position = Vector2(509, 264)
+script = ExtResource("4_5txvl")
+
+[node name="Heart" type="TextureRect" parent="Heart3" unique_id=596964590]
+offset_left = 582.0
+offset_top = 296.0
+offset_right = 1862.0
+offset_bottom = 1576.0
+scale = Vector2(0.040001985, 0.04000107)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Heart3" unique_id=977548816]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart3" unique_id=823954135]
+position = Vector2(606, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart3/Area2D" unique_id=519069982]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_7hxut")
+
+[node name="Heart4" type="Node2D" parent="." unique_id=1237629737]
+position = Vector2(121, -75)
+script = ExtResource("4_5txvl")
+
+[node name="Heart" type="TextureRect" parent="Heart4" unique_id=1901343773]
+offset_left = 582.0
+offset_top = 296.0
+offset_right = 1862.0
+offset_bottom = 1576.0
+scale = Vector2(0.040001985, 0.04000107)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Heart4" unique_id=1046007758]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart4" unique_id=34763239]
+position = Vector2(606, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart4/Area2D" unique_id=627564419]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_7hxut")
+
+[node name="Heart5" type="Node2D" parent="." unique_id=95905083]
+position = Vector2(-566, 135)
+script = ExtResource("4_5txvl")
+
+[node name="Heart" type="TextureRect" parent="Heart5" unique_id=1803053282]
+offset_left = 582.0
+offset_top = 296.0
+offset_right = 1862.0
+offset_bottom = 1576.0
+scale = Vector2(0.040001985, 0.04000107)
+texture = ExtResource("3_f6tb2")
+
+[node name="animation" type="AnimationPlayer" parent="Heart5" unique_id=527742336]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Heart5" unique_id=1583839025]
+position = Vector2(606, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heart5/Area2D" unique_id=2100672756]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_7hxut")
+
+[node name="themedtimer_screen" parent="." unique_id=1602934478 instance=ExtResource("6_0uv5o")]
+position = Vector2(477, -11)
+
+[connection signal="garlic_collected" from="Heart" to="." method="garlic_collect"]
+[connection signal="garlic_collected" from="Heart2" to="." method="garlic_collect"]
+[connection signal="garlic_collected" from="Heart3" to="." method="garlic_collect"]
+[connection signal="garlic_collected" from="Heart4" to="." method="garlic_collect"]
+[connection signal="garlic_collected" from="Heart5" to="." method="garlic_collect"]

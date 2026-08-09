@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cw4gsoe80eppw"]
+
+[ext_resource type="Texture2D" uid="uid://fhwjx17vt1cg" path="res://yellow.jpg" id="1_psbsm"]
+[ext_resource type="Script" uid="uid://hxlsn7klj6td" path="res://Scenes/minigame_2.gd" id="1_rfxq2"]
+[ext_resource type="Texture2D" uid="uid://bqv425r8rvoam" path="res://heart.png" id="2_he4ew"]
+[ext_resource type="Script" uid="uid://clcosyxnmjuuf" path="res://Scenes/button_1.gd" id="3_dfb65"]
+[ext_resource type="PackedScene" uid="uid://1wolvkfw8cro" path="res://Scenes/themedtimer_screen.tscn" id="4_rfxq2"]
+
+[node name="minigame_2" type="Node2D" unique_id=1162585949]
+script = ExtResource("1_rfxq2")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=796480127]
+repeat_size = Vector2(1150, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="ScrollingBackground" type="TextureRect" parent="Parallax2D" unique_id=2145215087]
+offset_right = 1152.0
+offset_bottom = 800.0
+texture = ExtResource("1_psbsm")
+
+[node name="Button_1" type="TextureButton" parent="." unique_id=356852020]
+offset_left = 127.0
+offset_top = 275.00003
+offset_right = 1407.0
+offset_bottom = 1555.0
+scale = Vector2(0.12160364, 0.1215979)
+texture_normal = ExtResource("2_he4ew")
+script = ExtResource("3_dfb65")
+
+[node name="Button_2" type="TextureButton" parent="." unique_id=158497752]
+offset_left = 204.0
+offset_top = 23.0
+offset_right = 1484.0
+offset_bottom = 1303.0
+scale = Vector2(0.12160364, 0.1215979)
+texture_normal = ExtResource("2_he4ew")
+script = ExtResource("3_dfb65")
+
+[node name="Button_3" type="TextureButton" parent="." unique_id=737381841]
+offset_left = 918.0
+offset_top = 65.0
+offset_right = 2198.0
+offset_bottom = 1345.0
+scale = Vector2(0.12160364, 0.1215979)
+texture_normal = ExtResource("2_he4ew")
+script = ExtResource("3_dfb65")
+
+[node name="Button_4" type="TextureButton" parent="." unique_id=759940602]
+offset_left = 471.0
+offset_top = 464.0
+offset_right = 1751.0
+offset_bottom = 1744.0
+scale = Vector2(0.12160364, 0.1215979)
+texture_normal = ExtResource("2_he4ew")
+script = ExtResource("3_dfb65")
+
+[node name="themedtimer_screen" parent="." unique_id=1602934478 instance=ExtResource("4_rfxq2")]
+position = Vector2(423, -7)
+
+[connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
+[connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]
+[connection signal="pressed" from="Button_3" to="Button_3" method="_on_pressed"]
+[connection signal="pressed" from="Button_4" to="Button_4" method="_on_pressed"]

@@ -1,3 +1,62 @@
 [gd_scene format=3 uid="uid://c8t7p0otf0xro"]
 
+[ext_resource type="Script" uid="uid://ddjyywme650xn" path="res://Scenes/timer_screen.gd" id="1_c7xwe"]
+[ext_resource type="Texture2D" uid="uid://fn83dqte4wmv" path="res://background.jpeg" id="1_cn3xy"]
+[ext_resource type="Texture2D" uid="uid://bqv425r8rvoam" path="res://heart.png" id="2_cn3xy"]
+
 [node name="level_scene" type="Node2D" unique_id=1746530642]
+script = ExtResource("1_c7xwe")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1237740524]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5999985, 0.59999895)
+texture = ExtResource("1_cn3xy")
+
+[node name="HeartContainer" type="HBoxContainer" parent="Background" unique_id=680210276]
+layout_mode = 0
+offset_left = 296.66742
+offset_top = 131.6669
+offset_right = 6735.0474
+offset_bottom = 1411.6669
+scale = Vector2(0.20812744, 0.22959964)
+
+[node name="Heart" type="TextureRect" parent="Background/HeartContainer" unique_id=1339033677]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+
+[node name="Heart2" type="TextureRect" parent="Background/HeartContainer" unique_id=475777637]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+
+[node name="Heart3" type="TextureRect" parent="Background/HeartContainer" unique_id=2071351500]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+
+[node name="Heart4" type="TextureRect" parent="Background/HeartContainer" unique_id=1957961624]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+
+[node name="Heart5" type="TextureRect" parent="Background/HeartContainer" unique_id=1370401277]
+layout_mode = 2
+texture = ExtResource("2_cn3xy")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1450251626]
+offset_left = 500.0
+offset_top = 267.0
+offset_right = 656.0
+offset_bottom = 325.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Level #"
+fit_content = true
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1665925969]
+offset_left = 541.0
+offset_top = 333.0
+offset_right = 620.0
+offset_bottom = 391.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"
+fit_content = true
