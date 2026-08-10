@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://clguyq674u0sr"]
+
+[ext_resource type="Texture2D" uid="uid://fn83dqte4wmv" path="res://background.jpeg" id="1_rwas2"]
+[ext_resource type="Script" uid="uid://b6rqehstwjtgh" path="res://Scenes/title_button.gd" id="2_tseak"]
+
+[node name="death_screen" type="Node2D" unique_id=979035966]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1595631888]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5999985, 0.59999895)
+texture = ExtResource("1_rwas2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1986969760]
+clip_contents = false
+offset_left = 315.0
+offset_top = 54.0
+offset_right = 813.0
+offset_bottom = 148.0
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/normal_font_size = 65
+text = "Oops! You died!"
+
+[node name="title_button" type="Button" parent="." unique_id=1660098777]
+offset_left = 381.0
+offset_top = 249.0
+offset_right = 733.0
+offset_bottom = 349.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 59
+text = "Title Screen
+"
+script = ExtResource("2_tseak")
+
+[connection signal="pressed" from="title_button" to="title_button" method="_on_pressed"]

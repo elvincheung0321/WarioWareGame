@@ -21,15 +21,20 @@ func _ready() -> void:
 func _process(delta: float) -> void: # running every frame brochacho
 	
 	if garlic_collected == 5: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
-		if Global.minigames_done > 3: # we access a global script and see how many minigames have been compeleted
+		if Global.minigames_done >= 2: # we access a global script and see how many minigames have been compeleted
 			get_tree().change_scene_to_file("res://Scenes/done_screen.tscn") # change current play scene into another, but you make your own finish screen in a later challenge, dont worry abt this rn
 		else:
 			get_tree().change_scene_to_file("res://Scenes/level_scene.tscn") # go back to the intermission scene
 	
 	if timer_end: # if the timer does end...
+		timer_end = false
 		Global.minigames_done -=1 #go back a minigame
-		Global.lives -= 1 # lose ur lives
-		get_tree().change_scene_to_file("res://Scenes/level_scene.tscn") # back to intermission
+		Global.lives -= 1
+		if Global.lives <= 0:
+			get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
+		else:
+			get_tree().change_scene_to_file("res://Scenes/level_scene.tscn")
+
 		
 
 func garlic_collect() -> void: # cool function that you connect to those garlics
